@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { FilterType } from '../types/FilterType';
 
 type Props = {
   filtered: string;
@@ -22,10 +23,10 @@ export const Footer: React.FC<Props> = ({
       <a
         href="#/"
         className={classNames('filter__link', {
-          selected: filtered === 'all',
+          selected: filtered === FilterType.All,
         })}
         data-cy="FilterLinkAll"
-        onClick={() => onFiltered('all')}
+        onClick={() => onFiltered(FilterType.All)}
       >
         All
       </a>
@@ -33,10 +34,10 @@ export const Footer: React.FC<Props> = ({
       <a
         href="#/active"
         className={classNames('filter__link', {
-          selected: filtered === 'active',
+          selected: filtered === FilterType.Active,
         })}
         data-cy="FilterLinkActive"
-        onClick={() => onFiltered('active')}
+        onClick={() => onFiltered(FilterType.Active)}
       >
         Active
       </a>
@@ -44,10 +45,10 @@ export const Footer: React.FC<Props> = ({
       <a
         href="#/completed"
         className={classNames('filter__link', {
-          selected: filtered === 'completed',
+          selected: filtered === FilterType.Completed,
         })}
         data-cy="FilterLinkCompleted"
-        onClick={() => onFiltered('completed')}
+        onClick={() => onFiltered(FilterType.Completed)}
       >
         Completed
       </a>
